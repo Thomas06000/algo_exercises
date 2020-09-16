@@ -15,4 +15,10 @@ class TestAlgorithmExercises(unittest.TestCase):
         self.assertTrue(subject4)
 
     def test_firstRepeatingCharacter(self):
-        self.assertTrue(True)
+        subject = exercises.firstRepeatingCharacter("stiost")
+        self.assertTrue(subject)
+
+    def test_generateMatchingParenthesis(self):
+        subject = exercises.generateMatchingParenthesis(3)
+        self.assertTrue(subject)
+
