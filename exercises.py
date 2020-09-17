@@ -14,7 +14,7 @@ def sumUpToKOLD(arr, k):
     return False
 
 def sumUpToK(arr, k):
-    visitedElements = {}
+    visitedElements = {} # hash map
     for index, item in enumerate(arr):
         if visitedElements.get(k-item):
             return True
@@ -23,7 +23,12 @@ def sumUpToK(arr, k):
     return False
 
 def firstRepeatingCharacter(str: str):
-    return True
+    for i in range(len(str)):
+        for j in range(i):
+            if str[i] == str[j]:
+                return str[i]
+    return "\0"
+
 
 def generateMatchingParenthesis(n: int):
     return True

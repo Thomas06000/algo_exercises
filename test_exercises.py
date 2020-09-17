@@ -15,10 +15,16 @@ class TestAlgorithmExercises(unittest.TestCase):
         self.assertTrue(subject4)
 
     def test_firstRepeatingCharacter(self):
-        subject = exercises.firstRepeatingCharacter("stiost")
-        self.assertTrue(subject)
+        subject = exercises.firstRepeatingCharacter(str= "inside code")
+        subject2 = exercises.firstRepeatingCharacter(str= "toulouse")
+        subject3 = exercises.firstRepeatingCharacter(str= "azerty")
+        subject4 = exercises.firstRepeatingCharacter(str= "mississipi")
+
+        self.assertEqual(subject, "i")
+        self.assertEqual(subject2, "o")
+        self.assertEqual(subject3, "\0")
+        self.assertEqual(subject4, "s")
 
     def test_generateMatchingParenthesis(self):
         subject = exercises.generateMatchingParenthesis(3)
         self.assertTrue(subject)
-
