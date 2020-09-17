@@ -25,6 +25,15 @@ class TestAlgorithmExercises(unittest.TestCase):
         self.assertEqual(subject3, "\0")
         self.assertEqual(subject4, "s")
 
+    def test_firstUniqueCharacter(self):
+        subject = exercises.firstUniqueCharacter(str= "leetcode")
+        subject2 = exercises.firstUniqueCharacter(str= "loveleetcode")
+        subject3 = exercises.firstUniqueCharacter(str= "abcdabcd")
+
+        self.assertEqual(subject, 0)
+        self.assertEqual(subject2, 2)
+        self.assertEqual(subject3, -1)
+
     def test_generateMatchingParenthesis(self):
         subject = exercises.generateMatchingParenthesis(3)
         self.assertTrue(subject)
