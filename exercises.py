@@ -1,5 +1,6 @@
 from typing import List
 
+# ----------------------------------------------------------------
 # brute force
 def sumUpToKOLD(arr, k):
     for i in range(len(arr)):
@@ -20,6 +21,7 @@ def sumUpToK(arr, k):
     return False
 
 
+# ----------------------------------------------------------------
 # brute force
 def firstRepeatingCharacter(str: str):
     for i in range(len(str)):
@@ -48,8 +50,8 @@ def firstUniqueCharacter(str: str):
             return index
     return -1
 
-
-def removeDuplicates(arr):
+# ----------------------------------------------------------------
+def _removeDuplicates(arr):
     visitedElements = {}
     indexToRemove = []
     for index, value in enumerate(arr):
@@ -62,6 +64,23 @@ def removeDuplicates(arr):
     for index in sorted(indexToRemove, reverse=True):
         del arr[index]
     return arr
+
+def removeDuplicates_simpler(arr):
+    noDuplicates = []
+    for value in arr:
+        if value not in noDuplicates:
+            noDuplicates.append(value)
+    return noDuplicates
+
+
+# Best solutions
+def removeDuplicates(arr):
+    visitedElements = {}
+    for value in arr:
+        visitedElements[value] = True
+    return list(visitedElements.keys())
+# ----------------------------------------------------------------
+
 
 
 
