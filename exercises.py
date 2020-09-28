@@ -79,9 +79,30 @@ def removeDuplicates(arr):
     for value in arr:
         visitedElements[value] = True
     return list(visitedElements.keys())
+
 # ----------------------------------------------------------------
+def findDuplicate(arr):
+    visitedElements = {}
+    for value in arr:
+        if visitedElements.get(value):
+            return value
+        else:
+            visitedElements[value] = True
+    return 0
 
 
+# Floyd's cycle detection algorithm (tortoise and hare)
+def findDuplicateFloyd(arr):
+    tortoise = arr[0]
+    hare = arr[arr[0]]
+    while tortoise != hare:
+        tortoise = arr[tortoise]
+        hare = arr[arr[hare]]
+    tortoise = 0
+    while tortoise != hare:
+        tortoise = arr[tortoise]
+        hare = arr[hare]
+    return tortoise
 
 
 def generateMatchingParenthesis(n: int):

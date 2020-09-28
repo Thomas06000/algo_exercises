@@ -56,6 +56,19 @@ class TestAlgorithmExercises(unittest.TestCase):
         self.assertEqual(subject2, [1])
         self.assertEqual(subject3, [4, 2, 3])
 
+
+    def test_findDuplicate(self):
+        subject = exercises.findDuplicate([4, 2, 1, 3, 1])
+        subject2 = exercises.findDuplicate([1, 3, 2, 2, 5, 2])
+        subject3 = exercises.findDuplicateFloyd([4, 2, 1, 3, 1])
+        subject4 = exercises.findDuplicateFloyd([1, 3, 2, 2, 5, 2])
+
+        self.assertEqual(subject, 1)
+        self.assertEqual(subject2, 2)
+        self.assertEqual(subject3, 1)
+        self.assertEqual(subject4, 2)
+
+
     def test_generateMatchingParenthesis(self):
         subject = exercises.generateMatchingParenthesis(3)
         self.assertTrue(subject)
