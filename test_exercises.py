@@ -25,6 +25,18 @@ class TestAlgorithmExercises(unittest.TestCase):
         self.assertEqual(subject3, "\0")
         self.assertEqual(subject4, "s")
 
+    def test_firstRepeatingCharacter_hashMap(self):
+        subject = exercises.firstRepeatingCharacter_hashMap(str= "inside code")
+        subject2 = exercises.firstRepeatingCharacter_hashMap(str= "toulouse")
+        subject3 = exercises.firstRepeatingCharacter_hashMap(str= "azerty")
+        subject4 = exercises.firstRepeatingCharacter_hashMap(str= "mississipi")
+
+        self.assertEqual(subject, "i")
+        self.assertEqual(subject2, "o")
+        self.assertEqual(subject3, "\0")
+        self.assertEqual(subject4, "s")
+
+
     def test_firstUniqueCharacter(self):
         subject = exercises.firstUniqueCharacter(str= "leetcode")
         subject2 = exercises.firstUniqueCharacter(str= "loveleetcode")

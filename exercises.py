@@ -27,6 +27,17 @@ def firstRepeatingCharacter(str: str):
                 return str[i]
     return "\0"
 
+def firstRepeatingCharacter_hashMap(str):
+    visitedElements = {}
+    for char in str:
+        if visitedElements.get(char):
+            return char
+        else:
+            visitedElements[char] = True
+    return "\0"
+
+            
+
 def firstUniqueCharacter(str: str):
     for index, char in enumerate(str):
         tempStr = str
