@@ -46,6 +46,16 @@ class TestAlgorithmExercises(unittest.TestCase):
         self.assertEqual(subject2, 2)
         self.assertEqual(subject3, -1)
 
+
+    def test_removeDuplicates(self):
+        subject = exercises.removeDuplicates(arr=[4, 2, 5, 3, 3, 1, 2, 4, 1, 5, 5, 5 ,3 ,1])
+        subject2 = exercises.removeDuplicates(arr=[1, 1, 1, 1, 1, 1, 1])
+        subject3 = exercises.removeDuplicates(arr=[4, 4, 2, 3, 2, 2, 4, 3])
+
+        self.assertEqual(subject, [4, 2, 5, 3, 1])
+        self.assertEqual(subject2, [1])
+        self.assertEqual(subject3, [4, 2, 3])
+
     def test_generateMatchingParenthesis(self):
         subject = exercises.generateMatchingParenthesis(3)
         self.assertTrue(subject)

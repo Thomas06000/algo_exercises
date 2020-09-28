@@ -20,6 +20,7 @@ def sumUpToK(arr, k):
     return False
 
 
+# brute force
 def firstRepeatingCharacter(str: str):
     for i in range(len(str)):
         for j in range(i):
@@ -27,6 +28,8 @@ def firstRepeatingCharacter(str: str):
                 return str[i]
     return "\0"
 
+
+# with hash map (fastest index system)
 def firstRepeatingCharacter_hashMap(str):
     visitedElements = {}
     for char in str:
@@ -36,7 +39,6 @@ def firstRepeatingCharacter_hashMap(str):
             visitedElements[char] = True
     return "\0"
 
-            
 
 def firstUniqueCharacter(str: str):
     for index, char in enumerate(str):
@@ -45,6 +47,22 @@ def firstUniqueCharacter(str: str):
         if not tempStr.__contains__(char):
             return index
     return -1
+
+
+def removeDuplicates(arr):
+    visitedElements = {}
+    indexToRemove = []
+    for index, value in enumerate(arr):
+        if visitedElements.get(value):
+            indexToRemove.append(index)
+        else:
+            visitedElements[value] = True
+    
+    # We reverse array to be able to properly pop an item from index
+    for index in sorted(indexToRemove, reverse=True):
+        del arr[index]
+    return arr
+
 
 
 def generateMatchingParenthesis(n: int):
