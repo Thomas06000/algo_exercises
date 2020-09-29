@@ -1,5 +1,5 @@
 import unittest
-import exercises
+import Exercises.Exercises_part1 as exercises
 
 class TestAlgorithmExercises(unittest.TestCase):
 
